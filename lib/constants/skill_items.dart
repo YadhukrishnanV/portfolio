@@ -50,5 +50,18 @@ const List<Map> skillItems = [
   },
   {
     "title": "GetX",
+  },
+  {
+    "title": "Riverpod",
+  },
+  {
+    "title": "MVVM",
+  },
+  {
+    "title": "MVC",
+  },
+  {
+    "title": "Clean",
   }
+
 ];

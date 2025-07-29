@@ -116,24 +116,24 @@ class MainMobile extends StatelessWidget {
   void _downloadCV() async {
     if (kIsWeb) {
       // For web
-      final ByteData bytes = await rootBundle.load('assets/yadhu_resume_.pdf');
+      final ByteData bytes = await rootBundle.load('assets/yadhu_resume.pdf');
       final List<int> list = bytes.buffer.asUint8List();
       final blob = html.Blob([list]);
       final url = html.Url.createObjectUrlFromBlob(blob);
 
       final anchor = html.AnchorElement(href: url)
-        ..setAttribute('download', 'assets/yadhu_resume_.pdf')
+        ..setAttribute('download', 'assets/yadhu_resume.pdf')
         ..click();
 
       html.Url.revokeObjectUrl(url);
     } else {
       // For Android and iOS
 
-      final ByteData bytes = await rootBundle.load('assets/yadhu_resume_.pdf');
+      final ByteData bytes = await rootBundle.load('assets/yadhu_resume.pdf');
       final Uint8List list = bytes.buffer.asUint8List();
 
       final directory = await getApplicationDocumentsDirectory();
-      final file = File('${directory.path}/assets/yadhu_resume_.pdf');
+      final file = File('${directory.path}/assets/yadhu_resume.pdf');
       await file.writeAsBytes(list);
 
       OpenFilex.open(file.path);
